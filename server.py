@@ -89,7 +89,7 @@ def update(entity):
 def world():
     '''you should probably return the world here'''
     wd = myWorld.world()
-    body = json.dumps(wd)
+    body = flask.jsonify(wd)
     #resp = flask.Response(response=body, status=200, content_type="application/json")
     return body
 
@@ -97,7 +97,7 @@ def world():
 def get_entity(entity):
     '''This is the GET version of the entity interface, return a representation of the entity'''
     ent = myWorld.get(entity)
-    body = json.dumps(ent)
+    body = flask.jsonify(ent)
     #resp = flask.Response(response=body, status=200, content_type="application/json")
     return body
 

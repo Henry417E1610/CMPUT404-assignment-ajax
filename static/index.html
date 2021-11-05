@@ -72,7 +72,8 @@ function drawCircle(context,entity) {
         //moveTo(x,y);
         fillStyle = entity["colour"];
         strokeStyle = fillStyle;
-        arc(x, y, (entity["radius"])?entity["radius"]:50, 0, 2.0 * Math.PI, false);  
+        arc(x, y, (entity["radius"])?entity["radius"]:50, 0, 2.0 * Math.PI, false);
+        fill();  
         stroke();                                
     }
 }
@@ -286,7 +287,7 @@ function update() {
 	    }
     }
     drawFrame();
-    xhr.open("POST", "/world");
+    xhr.open("GET", "/world");
     xhr.setRequestHeader("Accept", "application/json");
     xhr.send();
 }
